@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=36&pause=1000&color=FF6B35&center=true&vCenter=true&width=600&lines=🥧+EasyPi;Raspberry+Pi+Web+Manager" alt="EasyPi" />
+<img src="assets/logo.svg" width="120" alt="EasyPi Logo" />
+
+# EasyPi
 
 **The all-in-one web dashboard for your Raspberry Pi.**  
 Monitor, secure, and control everything — no SSH required.
@@ -24,56 +26,44 @@ Monitor, secure, and control everything — no SSH required.
 
 ## 📸 UI Preview
 
-![EasyPi Dashboard](assets/screenshots/dashboard/dashboard-1.png)
-
-More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
+Screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ---
 
 # 🇬🇧 English
 
-<div align="center">
-
-## 📸 At a Glance
+## � At a Glance
 
 | 🖥️ Live Dashboard | 🔐 Security Suite | 📵 Parental Control |
 |:-:|:-:|:-:|
-| Real-time CPU, RAM, temperature | 2FA · PiGuard Scanner · Firewall | Block 40+ streaming apps, all bypass attempts |
+| Real-time CPU, RAM, temperature | 2FA · PiGuard Scanner · Firewall | Block 40+ streaming apps & all bypass attempts |
 
-| 🤖 AI Assistant | 🌐 VPN Management | 💾 Cloud Backup |
+| 🤖 AI Assistant | 🌐 VPN Management | 💾 Backup |
 |:-:|:-:|:-:|
 | Claude AI for diagnostics & setup | WireGuard + Tailscale with QR codes | Scheduled backups with one-click restore |
-
-</div>
 
 ---
 
 ## ✨ Features
 
-<details open>
-<summary><b>🖥️ Dashboard & Real-Time Monitoring</b></summary>
-<br/>
+### 🖥️ Dashboard & Real-Time Monitoring
 
-- Live metrics for **CPU · RAM · Temperature · Disk**
+- Live metrics: **CPU · RAM · Temperature · Disk**
 - **Network activity** (RX/TX traffic graphs)
 - System services status at a glance
 - Beautiful **historical charts** for all metrics
 
-</details>
+---
 
-<details open>
-<summary><b>🚀 One-Click Service Management</b></summary>
-<br/>
+### 🚀 One-Click Service Management
 
 - Install **Pi-hole, WireGuard, Jellyfin, Home Assistant** and 15+ more — in one click
 - **Curated bundles**: Media Server · Smart Home · Monitoring
 - **Service catalog** with detailed descriptions and state tracking
 
-</details>
+---
 
-<details open>
-<summary><b>🔐 Enterprise-Grade Security</b></summary>
-<br/>
+### 🔐 Enterprise-Grade Security
 
 | Feature | Details |
 |---|---|
@@ -91,11 +81,9 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 - Persistent IP forwarding across reboots
 - NAT survives proxy restarts
 
-</details>
+---
 
-<details open>
-<summary><b>📵 Parental Control & Streaming Blocker</b></summary>
-<br/>
+### 📵 Parental Control & Streaming Blocker
 
 > **DNS-based protection** — each device shows `DNS active / stale / not seen` status so you can verify protection at a glance.
 
@@ -123,22 +111,18 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 > 📌 WireGuard / Tailscale ports (51820, 51821) are intentionally **not blocked** — EasyPi compatibility.
 
-</details>
+---
 
-<details>
-<summary><b>🌐 VPN & Remote Access</b></summary>
-<br/>
+### 🌐 VPN & Remote Access
 
 - **WireGuard VPN** with QR code generation for mobile clients
 - **Tailscale Admin API**: auto DNS config, device management, route approval
 - **PiCloud**: connect your Pi to cloud infrastructure
 - Remote access configuration wizard
 
-</details>
+---
 
-<details>
-<summary><b>🤖 AI Assistant (Claude)</b></summary>
-<br/>
+### 🤖 AI Assistant (Claude)
 
 - Chat-based assistant powered by **Claude AI**
 - Installs and configures services on demand
@@ -146,22 +130,18 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 - Suggests shell commands with explanations
 - Context-aware, system-specific recommendations
 
-</details>
+---
 
-<details>
-<summary><b>💾 Backup & Restore</b></summary>
-<br/>
+### 💾 Backup & Restore
 
 - Scheduled automatic backups
 - Full system snapshots (configs + databases)
 - **One-click restore**
 - Configuration versioning
 
-</details>
+---
 
-<details>
-<summary><b>📁 File Manager & 🔐 Encryption</b></summary>
-<br/>
+### 📁 File Manager & 🔐 Encryption
 
 - Web-based file browser and editor with **syntax highlighting**
 - Upload / download files from any browser
@@ -170,20 +150,41 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
   - Unique Salt + IV per file
   - Magic bytes `EPEC` for easy identification
 
-</details>
+---
 
-<details>
-<summary><b>💻 Web Terminal, 📹 Cameras & more</b></summary>
-<br/>
+### 💻 Web Terminal
 
-- **WebSSH Terminal** — full shell access in the browser, with session recording & playback
-- **RTSP Security Camera** integration — live view + recording management
-- **Push & Email notifications** (SMTP) with quiet-hours support
+- **WebSSH Terminal** — full shell access in the browser
+- Session recording & playback
+- Multiple concurrent sessions
+
+---
+
+### 📹 Security Cameras
+
+- RTSP camera integration
+- Live view in browser
+- Recording management
+
+---
+
+### 🔔 Notifications
+
+- **Push notifications** in browser
+- **Email notifications** (SMTP)
+- Customizable preferences with quiet-hours support
+
+---
+
+### 📱 PWA & 🔧 Network Tools
+
 - **PWA** — install as a mobile app, works partially offline
-- **Network Tools** — port scanner, LAN discovery, speed test, topology map, live traffic monitor
-- **Dark / Light theme** with fully responsive design
-
-</details>
+- **Port scanner** with range support
+- **LAN device discovery**
+- **Network speed test**
+- **Network topology map**
+- **Live traffic monitor**
+- **Dark / Light theme**, fully responsive design
 
 ---
 
@@ -219,7 +220,7 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ### Binary Release (Recommended)
 
-1. Download the latest `easypi-full-aarch64.tar.gz` from GitHub Releases.
+1. Download the latest `easypi-full-aarch64.tar.gz` from [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases).
 2. Verify checksum against [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
 3. Install on Raspberry Pi:
 
@@ -238,14 +239,11 @@ sudo bash /opt/EasyPi/install.sh --binary
 | Storage | 16 GB SD card | **32 GB SD card** |
 | Network | Internet connection | Wired Ethernet |
 
-### Installation
+### Installation from Source
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/NextQuantum/EasyPi.git
 cd EasyPi
-
-# 2. Run the installer
 chmod +x install.sh
 ./install.sh
 ```
@@ -258,7 +256,7 @@ https://your-pi-address/
 https://easypi.local/
 ```
 
-> If the browser shows `Your connection is not private` / `net::ERR_CERT_AUTHORITY_INVALID` on local EasyPi IP (for example, `192.168.89.226`), this is expected with a self-signed certificate. On a trusted home network, you can click **Proceed to site (unsafe)**.
+> If the browser shows `Your connection is not private` / `net::ERR_CERT_AUTHORITY_INVALID` on the local EasyPi IP — this is expected with a self-signed certificate. On a trusted home network, click **Proceed to site (unsafe)**.
 
 > **No default credentials.** On first launch EasyPi shows a setup screen to create your admin account and displays a **recovery token** — save it securely.
 
@@ -277,162 +275,139 @@ https://easypi.local/
 
 ## ✨ Возможности
 
-<details open>
-<summary><b>🖥️ Dashboard и мониторинг в реальном времени</b></summary>
-<br/>
+### 🖥️ Dashboard и мониторинг
 
 - Живые метрики: **CPU · RAM · Температура · Диск**
-- Мониторинг **сетевой активности** (графики RX/TX трафика)
-- Статус системных сервисов с первого взгляда
-- **История метрик** в виде красивых графиков
+- **Сетевая активность** (графики RX/TX)
+- Статус системных сервисов
+- **История метрик** в виде графиков
 
-</details>
+---
 
-<details open>
-<summary><b>🚀 Управление сервисами одним кликом</b></summary>
-<br/>
+### 🚀 Управление сервисами
 
-- Установка **Pi-hole, WireGuard, Jellyfin, Home Assistant** и 15+ других — в один клик
+- **Pi-hole, WireGuard, Jellyfin, Home Assistant** и 15+ других — в один клик
 - **Готовые наборы**: Media Server · Smart Home · Monitoring
-- **Каталог сервисов** с подробными описаниями
+- **Каталог сервисов** с описаниями
 
-</details>
+---
 
-<details open>
-<summary><b>🔐 Безопасность корпоративного уровня</b></summary>
-<br/>
+### 🔐 Безопасность
 
 | Функция | Описание |
 |---|---|
-| 2FA | Двухфакторная аутентификация на TOTP |
+| 2FA | TOTP двухфакторная аутентификация |
 | Сессии | Secure `httpOnly` + `SameSite` cookies + JWT (7 дней) |
 | Управление сессиями | Отслеживание устройств и мгновенный отзыв |
 | PiGuard Scanner | Автоматическое обнаружение уязвимостей |
 | Firewall | Управление UFW / iptables |
 | SSL/TLS | Полная поддержка сертификатов |
-| CSRF защита | Все изменяющие состояние операции защищены |
+| CSRF защита | Все изменяющие состояние операции |
 | Rate limiting | Защита API от брутфорса |
 
 **🧭 Full Gateway Mode:**
-- Авто-исправление loop-маршрутов (если шлюз — сам Pi)
+- Авто-исправление loop-маршрутов
 - Постоянный IP Forwarding после перезагрузки
 - NAT не пропадает при перезапуске прокси
 
-</details>
+---
 
-<details open>
-<summary><b>📵 Родительский контроль и блокировка стримингов</b></summary>
-<br/>
+### 📵 Родительский контроль
 
-> Для каждого устройства отображается статус `DNS active / stale / not seen` — сразу видно, защищено ли устройство.
+> Статус `DNS active / stale / not seen` для каждого устройства.
 
 **40+ заблокированных сервисов:** YouTube · Netflix · TikTok · Instagram · Facebook · WhatsApp · Telegram · Discord · Twitch · Spotify · Amazon Prime · Disney+ · HBO Max · Hulu · Reddit · Twitter · Roblox · Fortnite · Steam · Epic Games · и другие.
-
-**Многоуровневая система блокировки:**
 
 | Уровень | Что блокирует |
 |---|---|
 | DNS | Все известные домены + CDN |
 | ASN/IP | Захардкоженные IP (напр. AS2906 для Netflix) |
-| DoH/DoT | Предотвращение обхода через зашифрованный DNS |
-| Порты (iptables) | OpenVPN · IPSec · Tor · PPTP · Shadowsocks · SOCKS |
+| DoH/DoT | Зашифрованный DNS |
+| Порты | OpenVPN · IPSec · Tor · PPTP · Shadowsocks · SOCKS |
 
-**Защита от обхода (включается автоматически):** 170+ VPN / DoH / Tor / Proxy доменов + 19 портов
+**Защита от обхода:** 170+ доменов + 19 портов
 
 | Тип | Количество |
 |---|---|
-| Блокируемые VPN-провайдеры | 40+ (NordVPN, ExpressVPN, ProtonVPN, Surfshark…) |
-| DNS-over-HTTPS провайдеры | 25+ (1.1.1.1, dns.google, cloudflare-dns.com…) |
-| Прокси-сервисы | 25+ (hide.me, kproxy.com, croxyproxy.com…) |
+| VPN-провайдеры | 40+ |
+| DoH провайдеры | 25+ |
+| Прокси-сервисы | 25+ |
 | Tor | torproject.org · bridges · *.onion |
 
-**Fail-Closed карантин** *(опционально)* — при обнаружении обхода EasyPi блокирует **весь интернет** для устройства до нажатия **Restore Internet** в UI. Максимальная эффективность в **Full Gateway Mode**.
+**Fail-Closed карантин** — при обнаружении обхода блокирует **весь интернет** до нажатия **Restore Internet**.
 
-> 📌 Порты WireGuard / Tailscale (51820, 51821) **не блокируются** — совместимость с EasyPi.
+> 📌 Порты WireGuard / Tailscale (51820, 51821) **не блокируются**.
 
-</details>
+---
 
-<details>
-<summary><b>🌐 VPN и удалённый доступ</b></summary>
-<br/>
+### 🌐 VPN и удалённый доступ
 
-- **WireGuard VPN** с генерацией QR-кодов для мобильных клиентов
-- **Tailscale Admin API**: авто-настройка DNS, управление устройствами, одобрение маршрутов
-- **PiCloud**: подключение Pi к облачной инфраструктуре
-- Визард настройки удалённого доступа
+- **WireGuard VPN** с QR-кодами для мобильных
+- **Tailscale Admin API**: авто-настройка DNS, управление устройствами
+- **PiCloud**: подключение к облачной инфраструктуре
 
-</details>
+---
 
-<details>
-<summary><b>🤖 AI Ассистент (Claude)</b></summary>
-<br/>
+### 🤖 AI Ассистент
 
-- Чат-помощник на базе **Claude AI**
-- Устанавливает и настраивает сервисы по запросу
-- Диагностирует проблемы по логам системы
-- Предлагает и объясняет команды
-- Контекстно-зависимые рекомендации для вашей системы
+- **Claude AI** — диагностика, настройка, команды
+- Контекстно-зависимые рекомендации
 
-</details>
+---
 
-<details>
-<summary><b>💾 Резервное копирование</b></summary>
-<br/>
+### 💾 Резервное копирование
 
 - Автоматические бэкапы по расписанию
-- Полные снимки системы (конфиги + базы данных)
+- Полные снимки системы
 - **Восстановление одним кликом**
-- Версионирование конфигураций
 
-</details>
+---
 
-<details>
-<summary><b>📁 Файловый менеджер и 🔐 шифрование</b></summary>
-<br/>
+### 📁 Файловый менеджер и 🔐 шифрование
 
-- Веб-браузер и редактор файлов с **подсветкой синтаксиса**
-- Загрузка и скачивание файлов из любого браузера
-- **Шифрование AES-256-GCM (PiCloud)** — на стороне клиента, пароль никогда не покидает браузер
-  - PBKDF2 с 100 000 итераций (защита от брутфорса)
-  - Уникальные Salt + IV для каждого файла
-  - Magic bytes `EPEC` для идентификации
+- Просмотр и редактирование файлов в браузере
+- **AES-256-GCM** (PiCloud) — шифрование на стороне клиента
+- PBKDF2 с 100 000 итераций, уникальные Salt + IV
 
-</details>
+---
 
-<details>
-<summary><b>💻 Терминал, 📹 Камеры и другое</b></summary>
-<br/>
+### 💻 Терминал · 📹 Камеры · 📱 PWA · 🔧 Сеть
 
-- **WebSSH Терминал** — полный доступ к shell в браузере, запись и воспроизведение сессий
-- **RTSP видеонаблюдение** — живой просмотр + управление записями
-- **Push и Email уведомления** (SMTP) с поддержкой тихих часов
-- **PWA** — установка как мобильное приложение, частичная работа офлайн
-- **Сетевые инструменты** — сканер портов, обнаружение устройств, спидтест, карта топологии, мониторинг трафика
-- **Тёмная / Светлая тема**, полностью адаптивный дизайн
-
-</details>
+- **WebSSH Терминал** — запись и воспроизведение сессий
+- **RTSP видеонаблюдение** — живой просмотр
+- **PWA** — установка как мобильное приложение
+- **Сетевые инструменты**: сканер портов, обнаружение устройств, спидтест, карта топологии
 
 ---
 
 ## 🚀 Быстрый старт
+
+### Бинарный релиз (рекомендуется)
+
+1. Скачай `easypi-full-aarch64.tar.gz` из [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases).
+2. Проверь контрольную сумму: [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
+3. Установи:
+
+```bash
+sudo mkdir -p /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo bash /opt/EasyPi/install.sh --binary
+```
 
 ### Требования
 
 | Требование | Минимум | Рекомендуется |
 |---|---|---|
 | Железо | Raspberry Pi 3 | **Pi 4 · 4 ГБ ОЗУ** |
-| ОС | Raspberry Pi OS Bullseye | Последняя Raspberry Pi OS |
+| ОС | Raspberry Pi OS Bullseye | Последняя версия |
 | Хранилище | SD карта 16 ГБ | **SD карта 32 ГБ** |
 | Сеть | Интернет-подключение | Проводной Ethernet |
 
-### Установка
+### Установка из исходников
 
 ```bash
-# 1. Склонируй репозиторий
 git clone https://github.com/NextQuantum/EasyPi.git
 cd EasyPi
-
-# 2. Запусти установщик
 chmod +x install.sh
 ./install.sh
 ```
@@ -445,9 +420,9 @@ https://адрес-вашего-pi/
 https://easypi.local/
 ```
 
-> Если браузер показывает `Подключение не защищено` / `net::ERR_CERT_AUTHORITY_INVALID` на локальном IP EasyPi (например, `192.168.89.226`) — это нормально для самоподписанного сертификата. В домашней сети можно нажать **«Перейти на сайт (небезопасно)»**.
+> Если браузер показывает `Подключение не защищено` — нормально для самоподписанного сертификата. Нажми **«Перейти на сайт (небезопасно)»**.
 
-> **Логина и пароля по умолчанию нет.** При первом запуске EasyPi покажет экран создания admin-аккаунта и **recovery token** — сохрани его в надёжном месте.
+> **Логина и пароля по умолчанию нет.** При первом запуске создашь admin-аккаунт и получишь **recovery token** — сохрани.
 
 ---
 
@@ -456,7 +431,7 @@ https://easypi.local/
 <div align="center">
 
 **EasyPi** — das All-in-One-Dashboard für Ihren Raspberry Pi.  
-Überwachung, Sicherheit und Kontrolle — ganz ohne SSH oder Kommandozeile.
+Überwachung, Sicherheit und Kontrolle — ganz ohne SSH.
 
 </div>
 
@@ -464,30 +439,24 @@ https://easypi.local/
 
 ## ✨ Funktionen
 
-<details open>
-<summary><b>🖥️ Dashboard & Echtzeit-Monitoring</b></summary>
-<br/>
+### 🖥️ Dashboard & Echtzeit-Monitoring
 
 - Live-Metriken: **CPU · RAM · Temperatur · Festplatte**
 - **Netzwerkaktivität** (RX/TX-Graphen)
 - Dienste-Status auf einen Blick
 - **Historische Diagramme** für alle Metriken
 
-</details>
+---
 
-<details open>
-<summary><b>🚀 Dienstverwaltung mit einem Klick</b></summary>
-<br/>
+### 🚀 Dienstverwaltung mit einem Klick
 
-- **Pi-hole, WireGuard, Jellyfin, Home Assistant** und 15+ weitere Dienste — in einem Klick installieren
+- **Pi-hole, WireGuard, Jellyfin, Home Assistant** und 15+ weitere — in einem Klick
 - **Fertige Stacks**: Media Server · Smart Home · Monitoring
 - **Dienstkatalog** mit ausführlichen Beschreibungen
 
-</details>
+---
 
-<details open>
-<summary><b>🔐 Enterprise-Sicherheit</b></summary>
-<br/>
+### 🔐 Enterprise-Sicherheit
 
 | Funktion | Details |
 |---|---|
@@ -497,7 +466,7 @@ https://easypi.local/
 | PiGuard Scanner | Automatische Schwachstellenerkennung |
 | Firewall | UFW / iptables-Verwaltung |
 | SSL/TLS | Vollständige Zertifikatunterstützung |
-| CSRF-Schutz | Alle zustandsändernden Operationen geschützt |
+| CSRF-Schutz | Alle zustandsändernden Operationen |
 | Rate Limiting | API-Brute-Force-Schutz |
 
 **🧭 Full Gateway Mode:**
@@ -505,53 +474,62 @@ https://easypi.local/
 - Persistentes IP-Forwarding nach Neustarts
 - NAT bleibt aktiv bei Proxy-Neustarts
 
-</details>
+---
 
-<details open>
-<summary><b>📵 Kindersicherung & Streaming-Blocker</b></summary>
-<br/>
+### 📵 Kindersicherung & Streaming-Blocker
 
-> Pro Gerät wird `DNS active / stale / not seen` angezeigt — sofortiger Überblick über den Schutzstatus.
+> Pro Gerät wird `DNS active / stale / not seen` angezeigt.
 
 **40+ gesperrte Dienste:** YouTube · Netflix · TikTok · Instagram · Facebook · WhatsApp · Telegram · Discord · Twitch · Spotify · Amazon Prime · Disney+ · HBO Max · Hulu · Reddit · Twitter · Roblox · Fortnite · Steam · Epic Games · und mehr.
-
-**Mehrstufige Blockierungs-Engine:**
 
 | Ebene | Was blockiert wird |
 |---|---|
 | DNS | Alle bekannten Domains + CDN-Endpunkte |
 | ASN/IP | Hardcodierte IPs (z.B. AS2906 für Netflix) |
-| DoH/DoT | Verschlüsselte DNS-Umgehung verhindern |
-| Ports (iptables) | OpenVPN · IPSec · Tor · PPTP · Shadowsocks · SOCKS |
+| DoH/DoT | Verschlüsselte DNS-Umgehung |
+| Ports | OpenVPN · IPSec · Tor · PPTP · Shadowsocks · SOCKS |
 
-**Umgehungsschutz (automatisch aktiviert):** 170+ VPN / DoH / Tor / Proxy-Domains + 19 Ports
+**Umgehungsschutz:** 170+ Domains + 19 Ports
 
-**Fail-Closed Quarantäne** *(optional)* — bei erkannter Umgehung sperrt EasyPi **das gesamte Internet** für das Gerät, bis der Admin **Restore Internet** klickt. Am effektivsten im **Full Gateway Mode**.
+**Fail-Closed Quarantäne** — bei erkannter Umgehung sperrt EasyPi das **gesamte Internet** bis **Restore Internet** geklickt wird.
 
-> 📌 WireGuard / Tailscale-Ports (51820, 51821) werden bewusst **nicht blockiert** — EasyPi-Kompatibilität.
+> 📌 WireGuard / Tailscale-Ports (51820, 51821) werden **nicht blockiert**.
 
-</details>
+---
 
-<details>
-<summary><b>Weitere Funktionen</b></summary>
-<br/>
+### 🌐 VPN & Fernzugriff
 
-- **WireGuard VPN** mit QR-Code-Generierung für mobile Geräte
-- **Tailscale Admin API**: automatische DNS-Konfiguration, Geräteverwaltung
-- **KI-Assistent (Claude AI)** — Diagnose, Befehle, Servicekonfiguration
+- **WireGuard VPN** mit QR-Code-Generierung
+- **Tailscale Admin API**: automatische DNS-Konfiguration
+- **PiCloud**: Raspberry Pi mit Cloud verbinden
+
+---
+
+### 🤖 KI-Assistent · 💾 Backup · 📁 Dateien · 💻 Terminal
+
+- **Claude AI** — Diagnose, Befehle, Servicekonfiguration
 - **Backup & Restore** — geplante Sicherungen, Ein-Klick-Wiederherstellung
-- **Dateimanager** mit Code-Editor und Syntaxhervorhebung
-- **AES-256-GCM Dateiverschlüsselung** — clientseitig, Passwort verlässt nie den Browser
+- **Dateimanager** mit Code-Editor und AES-256-GCM Verschlüsselung
 - **WebSSH-Terminal** — vollständiger Shell-Zugriff im Browser
 - **RTSP-Kameras** — Live-Ansicht + Aufnahmeverwaltung
 - **PWA** — Als mobile App installierbar
-- **Netzwerk-Tools** — Port-Scanner, Geräteerkennung, Speedtest, Topologie-Map
-
-</details>
+- **Netzwerk-Tools**: Port-Scanner, Speedtest, Topologie-Map
 
 ---
 
 ## 🚀 Schnellstart
+
+### Binary Release (Empfohlen)
+
+1. `easypi-full-aarch64.tar.gz` von [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen.
+2. Prüfsumme verifizieren: [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
+3. Installieren:
+
+```bash
+sudo mkdir -p /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo bash /opt/EasyPi/install.sh --binary
+```
 
 ### Anforderungen
 
@@ -562,14 +540,11 @@ https://easypi.local/
 | Speicher | 16 GB SD-Karte | **32 GB SD-Karte** |
 | Netzwerk | Internetverbindung | Kabelgebundenes Ethernet |
 
-### Installation
+### Installation aus Quellcode
 
 ```bash
-# 1. Repository klonen
 git clone https://github.com/NextQuantum/EasyPi.git
 cd EasyPi
-
-# 2. Installer ausführen
 chmod +x install.sh
 ./install.sh
 ```
@@ -582,9 +557,9 @@ https://ihre-pi-adresse/
 https://easypi.local/
 ```
 
-> Wenn der Browser bei der lokalen EasyPi-IP (z. B. `192.168.89.226`) `Verbindung ist nicht privat` / `net::ERR_CERT_AUTHORITY_INVALID` zeigt, ist das bei einem selbstsignierten Zertifikat normal. Im vertrauenswürdigen Heimnetz kann man **„Weiter zur Website (unsicher)“** wählen.
+> Wenn der Browser `Verbindung ist nicht privat` zeigt — normal bei einem selbstsignierten Zertifikat. Im vertrauenswürdigen Heimnetz **„Weiter zur Website (unsicher)"** wählen.
 
-> **Keine Standard-Anmeldedaten.** Beim ersten Start zeigt EasyPi den Setup-Bildschirm zur Admin-Kontoerstellung und einen **Recovery-Token** — diesen sicher aufbewahren.
+> **Keine Standard-Anmeldedaten.** Beim ersten Start Admin-Konto erstellen und **Recovery-Token** sichern.
 
 ---
 
@@ -598,8 +573,6 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 
 ## 🤝 Contributing
 
-We welcome every contribution! 🎉
-
 | How to help | Action |
 |---|---|
 | 🐛 Found a bug? | [Open an Issue](https://github.com/NextQuantum/EasyPi/issues) |
@@ -612,6 +585,6 @@ We welcome every contribution! 🎉
 
 <sub>Made with ❤️ for the Raspberry Pi community</sub>
 
-[⬆ Back to top](#-easypi)
+[⬆ Back to top](#easypi)
 
 </div>
