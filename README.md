@@ -195,19 +195,21 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 ## 🏗️ Architecture
 
 ```
-╔══════════════════════════════════════════════════╗
-║        Frontend  ·  React 18 + TypeScript        ║
-║        Vite  ·  Tailwind CSS  ·  Zustand         ║
-╚══════════════════════╤═══════════════════════════╝
-                       │  WebSocket + REST API
-╔══════════════════════╧═══════════════════════════╗
-║       Backend  ·  FastAPI (Python 3.9+)          ║
-║       SQLAlchemy  ·  Alembic  ·  psutil          ║
-╚══════════════════════╤═══════════════════════════╝
-                       │
-╔══════════════════════╧═══════════════════════════╗
-║     SQLite  ·  System Services  ·  Raspberry Pi  ║
-╚══════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════╗
+║          Frontend  ·  React 18 + TypeScript              ║
+║     Vite · Tailwind CSS · Zustand · TanStack Query       ║
+║         Recharts · xterm.js · vis-network                ║
+╚══════════════════════════╤═══════════════════════════════╝
+                           │  WebSocket + REST API
+╔══════════════════════════╧═══════════════════════════════╗
+║       Backend  ·  FastAPI + Uvicorn (Python 3.9+)        ║
+║    SQLAlchemy · Alembic · Pydantic v2 · psutil           ║
+║         paramiko (SSH) · go2rtc (WebRTC)                 ║
+╚══════════════════════════╤═══════════════════════════════╝
+                           │
+╔══════════════════════════╧═══════════════════════════════╗
+║    SQLite / PostgreSQL · System Services · Raspberry Pi  ║
+╚══════════════════════════════════════════════════════════╝
 ```
 
 ### 🛠️ Tech Stack
@@ -592,3 +594,4 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 [⬆ Back to top](#easypi)
 
 </div>
+
