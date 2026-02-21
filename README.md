@@ -2,51 +2,60 @@
 
 # EasyPi
 
-**Raspberry Pi Security & Network Control Dashboard**  
-**Binary releases only** (no source code in this repository)
+### Raspberry Pi Security & Network Control Dashboard
+
+Binary releases only (no source code in this repository)
 
 [![Release](https://img.shields.io/github/v/release/NextQuantum/EasyPi?display_name=tag&style=for-the-badge)](https://github.com/NextQuantum/EasyPi/releases)
-[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%20(aarch64)-C51A4A?style=for-the-badge)](#install)
+[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%20aarch64-C51A4A?style=for-the-badge)](#install)
 [![License](https://img.shields.io/badge/License-Proprietary-111827?style=for-the-badge)](LICENSE)
 
 </div>
 
 ---
 
-## What You Get
+## Overview
 
-EasyPi gives you a web interface to manage network protection on Raspberry Pi:
+EasyPi is a web interface for managing Raspberry Pi network protection and home-lab security without working directly in terminal for every task.
 
-- Dashboard with live system stats
-- Guard Security / parental controls / bypass detection
-- DNS controls and filtering
-- VPN, remote access, network tools
-- Backups and restore flows
+What you can do:
+
+- Live dashboard (CPU, RAM, temperature, disk)
+- Guard Security and parental controls
+- DNS filtering and anti-bypass controls
+- VPN and remote access management
+- Network tools, monitoring, backups
 
 ---
 
-## Screenshots
+## UI Preview
 
-![Dashboard](screenshots/dashboard/dashboard-1.png)
-
-| Security | Network Toolkit |
+| Dashboard | Guard Security |
 |---|---|
-| ![Guard Security](screenshots/guard-security/5-parents-control.png) | ![Toolkit](screenshots/network-toolkit/1-toolkit.png) |
+| ![Dashboard](screenshots/dashboard/dashboard-1.png) | ![Guard Security](screenshots/guard-security/5-parents-control.png) |
 
-More screenshots: [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md)
+| Network Toolkit | Settings |
+|---|---|
+| ![Toolkit](screenshots/network-toolkit/1-toolkit.png) | ![Settings](screenshots/settings/1-settings.png) |
+
+| Remote Access | Monitoring |
+|---|---|
+| ![Remote](screenshots/remote-access/remote-1.png) | ![Monitoring](screenshots/monitoring/monitoring.png) |
+
+Full gallery: [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md)
 
 ---
 
 ## Install
 
-### 1. Download release files
+### 1) Download release files
 
 Open [Releases](https://github.com/NextQuantum/EasyPi/releases) and download:
 
 - `easypi-full-aarch64.tar.gz`
 - `SHA256SUMS.txt`
 
-### 2. Verify checksum (recommended)
+### 2) Verify SHA256 (recommended)
 
 Linux/macOS:
 
@@ -62,7 +71,7 @@ Get-FileHash .\easypi-full-aarch64.tar.gz -Algorithm SHA256
 Get-Content .\SHA256SUMS.txt
 ```
 
-### 3. Install on Raspberry Pi
+### 3) Install on Raspberry Pi
 
 ```bash
 sudo mkdir -p /opt/EasyPi
@@ -70,28 +79,16 @@ sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-After install, open:
+Open in browser:
 
 - `https://<RASPBERRY_PI_IP>/`
 
 ---
 
-## First Login / Certificate Warning
-
-For local IP HTTPS, browser may show `ERR_CERT_AUTHORITY_INVALID`.  
-This is expected with self-signed local certificates.
-
-You can continue manually (`Advanced` -> `Proceed`) on your own trusted LAN.
-
----
-
-## Update to New Version
-
-1. Download a newer release archive.
-2. Extract over `/opt/EasyPi`.
-3. Run installer again:
+## Update
 
 ```bash
+sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
@@ -99,7 +96,7 @@ sudo bash /opt/EasyPi/install.sh --binary
 
 ## Troubleshooting
 
-Check service status:
+Service status:
 
 ```bash
 sudo systemctl --no-pager -l status easypi-backend easypi-netprotection nginx
@@ -114,7 +111,23 @@ sudo journalctl -u easypi-netprotection -f
 
 ---
 
+## HTTPS Warning (Local IP)
+
+On first local access, browser may show:
+
+- `ERR_CERT_AUTHORITY_INVALID`
+
+This is expected with a local self-signed certificate. On your trusted home LAN, you can continue via browser advanced options.
+
+---
+
+## Notes
+
+- This repository is for binaries and release assets.
+- Source code is not published here.
+
+---
+
 ## License
 
-This project is distributed under a proprietary license.  
-See [LICENSE](LICENSE).
+Proprietary license: [LICENSE](LICENSE)
