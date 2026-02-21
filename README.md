@@ -236,6 +236,18 @@ sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
+or 
+
+```bash
+wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
+sudo mkdir -p /opt/EasyPi
+sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
+```
+
+
 ### Requirements
 
 | Requirement | Minimum | Recommended |
@@ -244,15 +256,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 | OS | Raspberry Pi OS Bullseye | Latest Raspberry Pi OS |
 | Storage | 16 GB SD card | **32 GB SD card** |
 | Network | Internet connection | Wired Ethernet |
-
-### Installation from Source
-
-```bash
-git clone https://github.com/NextQuantum/EasyPi.git
-cd EasyPi
-chmod +x install.sh
-./install.sh
-```
 
 ### First Access
 
@@ -400,6 +403,17 @@ sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
+или
+
+```bash
+wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
+sudo mkdir -p /opt/EasyPi
+sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
+```
+
 ### Требования
 
 | Требование | Минимум | Рекомендуется |
@@ -408,15 +422,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 | ОС | Raspberry Pi OS Bullseye | Последняя версия |
 | Хранилище | SD карта 16 ГБ | **SD карта 32 ГБ** |
 | Сеть | Интернет-подключение | Проводной Ethernet |
-
-### Установка из исходников
-
-```bash
-git clone https://github.com/NextQuantum/EasyPi.git
-cd EasyPi
-chmod +x install.sh
-./install.sh
-```
 
 ### Первый вход
 
@@ -536,6 +541,16 @@ sudo mkdir -p /opt/EasyPi
 sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
+oder
+
+```bash
+wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
+sudo mkdir -p /opt/EasyPi
+sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
+```
 
 ### Anforderungen
 
@@ -546,14 +561,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 | Speicher | 16 GB SD-Karte | **32 GB SD-Karte** |
 | Netzwerk | Internetverbindung | Kabelgebundenes Ethernet |
 
-### Installation aus Quellcode
-
-```bash
-git clone https://github.com/NextQuantum/EasyPi.git
-cd EasyPi
-chmod +x install.sh
-./install.sh
-```
 
 ### Erster Zugriff
 
@@ -594,4 +601,5 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 [⬆ Back to top](#easypi)
 
 </div>
+
 
