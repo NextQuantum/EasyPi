@@ -26,7 +26,11 @@ Monitor, secure, and control everything — no SSH required.
 
 ## 📸 UI Preview
 
-Screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
+| | |
+|:-:|:-:|
+| ![Dashboard](assets/screenshots/dashboard/dashboard-1.png) | ![Dashboard](assets/screenshots/dashboard/dashboard-2.png) |
+
+More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ---
 
