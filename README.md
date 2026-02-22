@@ -61,7 +61,7 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ### 🚀 One-Click Service Management
 
-- Install **Pi-hole, WireGuard, Jellyfin, Home Assistant** and 15+ more — in one click
+- Install **WireGuard, Tailscale, Ollama** — in one click
 - **Curated bundles**: Media Server · Smart Home · Monitoring
 - **Service catalog** with detailed descriptions and state tracking
 
@@ -295,7 +295,7 @@ https://easypi.local/
 
 ### 🚀 Управление сервисами
 
-- **Pi-hole, WireGuard, Jellyfin, Home Assistant** и 15+ других — в один клик
+- **WireGuard, Tailscale, Ollama** — в один клик
 - **Готовые наборы**: Media Server · Smart Home · Monitoring
 - **Каталог сервисов** с описаниями
 
@@ -461,7 +461,7 @@ https://easypi.local/
 
 ### 🚀 Dienstverwaltung mit einem Klick
 
-- **Pi-hole, WireGuard, Jellyfin, Home Assistant** und 15+ weitere — in einem Klick
+- **WireGuard, Tailscale, Ollama** — in einem Klick
 - **Fertige Stacks**: Media Server · Smart Home · Monitoring
 - **Dienstkatalog** mit ausführlichen Beschreibungen
 
@@ -601,5 +601,6 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 [⬆ Back to top](#easypi)
 
 </div>
+
 
 
