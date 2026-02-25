@@ -126,9 +126,8 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ---
 
-### 🤖 AI Assistant (Claude)
+### 🤖 AI Assistant 
 
-- Chat-based assistant powered by **Claude AI**
 - Installs and configures services on demand
 - Diagnoses problems from system logs
 - Suggests shell commands with explanations
@@ -359,7 +358,6 @@ https://easypi.local/
 
 ### 🤖 AI Ассистент
 
-- **Claude AI** — диагностика, настройка, команды
 - Контекстно-зависимые рекомендации
 
 ---
@@ -518,7 +516,6 @@ https://easypi.local/
 
 ### 🤖 KI-Assistent · 💾 Backup · 📁 Dateien · 💻 Terminal
 
-- **Claude AI** — Diagnose, Befehle, Servicekonfiguration
 - **Backup & Restore** — geplante Sicherungen, Ein-Klick-Wiederherstellung
 - **Dateimanager** mit Code-Editor und AES-256-GCM Verschlüsselung
 - **WebSSH-Terminal** — vollständiger Shell-Zugriff im Browser
@@ -601,6 +598,7 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 [⬆ Back to top](#easypi)
 
 </div>
+
 
 
 
