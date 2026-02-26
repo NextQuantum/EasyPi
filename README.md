@@ -42,9 +42,13 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 |:-:|:-:|:-:|
 | Real-time CPU, RAM, temperature | 2FA · PiGuard Scanner · Firewall | Block 40+ streaming apps & all bypass attempts |
 
-| 🤖 AI Assistant | 🌐 VPN Management | 💾 Backup |
+| 🤖 AI Models | 🌐 VPN Management | 💾 Backup |
 |:-:|:-:|:-:|
-| Claude AI for diagnostics & setup | WireGuard + Tailscale with QR codes | Scheduled backups with one-click restore |
+| Local LLMs via Ollama (Qwen 2.5 7B · Llama 3.1 8B · DeepSeek-R1 14B) | WireGuard + Tailscale with QR codes | Scheduled backups with one-click restore |
+
+> ⚠️ **Status:** active development.  
+> EasyPi is officially tested on **Raspberry Pi OS Lite 64-bit (Debian Trixie)**.  
+> Some features may behave differently depending on Raspberry Pi model, network, and system configuration.
 
 ---
 
@@ -126,12 +130,12 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ---
 
-### 🤖 AI Assistant (Claude)
+### 🤖 AI Chat (Local LLMs via Ollama)
 
-- Installs and configures services on demand
-- Diagnoses problems from system logs
-- Suggests shell commands with explanations
-- Context-aware, system-specific recommendations
+- General-purpose AI chat inside the EasyPi interface
+- Helps with explanations and draft shell commands
+- Runs local models through Ollama (for example: Qwen 2.5 7B, Llama 3.1 8B, DeepSeek-R1 14B)
+- Always review suggested commands before running them
 
 ---
 
@@ -245,7 +249,7 @@ sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-> Current status: only the **Trixie** binary release is available at the moment.
+> Official support status: **only Trixie is officially supported right now**.
 
 > Installer now creates timestamped backups before replacing managed files (for example: `.env`, `systemd` units, nginx config) using `*.bak-YYYYMMDD-HHMMSS`.
 
@@ -303,7 +307,7 @@ sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-If backend crashes with `status=255/EXCEPTION`, check that your system is Debian Trixie and that you installed the `...-trixie.tar.gz` release.
+If backend crashes with `status=255/EXCEPTION`, make sure your system is Debian Trixie and you installed `...-trixie.tar.gz`.
 
 ---
 
@@ -318,9 +322,13 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 
 ---
 
+> ⚠️ **Статус:** активная разработка.  
+> EasyPi официально протестирован на **Raspberry Pi OS Lite 64-bit (Debian Trixie)**.  
+> Некоторые функции могут работать по-разному в зависимости от модели Raspberry Pi, сети и конфигурации системы.
+
 ## ✨ Возможности
 
-### 🖥️ Dashboard и мониторинг
+### 🖥️ Панель управления и мониторинг
 
 - Живые метрики: **CPU · RAM · Температура · Диск**
 - **Сетевая активность** (графики RX/TX)
@@ -332,7 +340,7 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 ### 🚀 Управление сервисами
 
 - **WireGuard,Tailscale,Ollama** — в один клик
-- **Готовые наборы**: Media Server · Smart Home · Monitoring
+- **Готовые наборы**: медиасервер · умный дом · мониторинг
 - **Каталог сервисов** с описаниями
 
 ---
@@ -342,24 +350,24 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 | Функция | Описание |
 |---|---|
 | 2FA | TOTP двухфакторная аутентификация |
-| Сессии | Secure `httpOnly` + `SameSite` cookies + JWT (7 дней) |
+| Сессии | Защищённые cookie `httpOnly` + `SameSite` и JWT (7 дней) |
 | Управление сессиями | Отслеживание устройств и мгновенный отзыв |
 | PiGuard Scanner | Автоматическое обнаружение уязвимостей |
 | Firewall | Управление UFW / iptables |
 | SSL/TLS | Полная поддержка сертификатов |
 | CSRF защита | Все изменяющие состояние операции |
-| Rate limiting | Защита API от брутфорса |
+| Ограничение частоты запросов | Защита API от брутфорса |
 
-**🧭 Full Gateway Mode:**
-- Авто-исправление loop-маршрутов
-- Постоянный IP Forwarding после перезагрузки
+**🧭 Режим полного шлюза:**
+- Автоматическое исправление маршрутных петель
+- Постоянная IP-переадресация после перезагрузки
 - NAT не пропадает при перезапуске прокси
 
 ---
 
 ### 📵 Родительский контроль
 
-> Статус `DNS active / stale / not seen` для каждого устройства.
+> Статус `DNS активен / устарел / не замечен` для каждого устройства.
 
 **40+ заблокированных сервисов:** YouTube · Netflix · TikTok · Instagram · Facebook · WhatsApp · Telegram · Discord · Twitch · Spotify · Amazon Prime · Disney+ · HBO Max · Hulu · Reddit · Twitter · Roblox · Fortnite · Steam · Epic Games · и другие.
 
@@ -375,11 +383,11 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 | Тип | Количество |
 |---|---|
 | VPN-провайдеры | 40+ |
-| DoH провайдеры | 25+ |
+| Провайдеры DoH | 25+ |
 | Прокси-сервисы | 25+ |
 | Tor | torproject.org · bridges · *.onion |
 
-**Fail-Closed карантин** — при обнаружении обхода блокирует **весь интернет** до нажатия **Restore Internet**.
+**Карантин Fail-Closed** — при обнаружении обхода блокирует **весь интернет** до нажатия **«Восстановить интернет»**.
 
 > 📌 Порты WireGuard / Tailscale (51820, 51821) **не блокируются**.
 
@@ -393,9 +401,12 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 
 ---
 
-### 🤖 AI Ассистент
+### 🤖 AI-чат (локальные LLM через Ollama)
 
-- Контекстно-зависимые рекомендации
+- Общий AI-чат прямо в интерфейсе EasyPi
+- Помогает с пояснениями и черновиками shell-команд
+- Работает с локальными моделями через Ollama (например: Qwen 2.5 7B, Llama 3.1 8B, DeepSeek-R1 14B)
+- Любые предложенные команды нужно проверять перед запуском
 
 ---
 
@@ -417,7 +428,7 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 
 ### 💻 Терминал · 📹 Камеры · 📱 PWA · 🔧 Сеть
 
-- **WebSSH Терминал** — запись и воспроизведение сессий
+- **Терминал WebSSH** — запись и воспроизведение сессий
 - **RTSP видеонаблюдение** — живой просмотр
 - **PWA** — установка как мобильное приложение
 - **Сетевые инструменты**: сканер портов, обнаружение устройств, спидтест, карта топологии
@@ -428,12 +439,12 @@ If backend crashes with `status=255/EXCEPTION`, check that your system is Debian
 
 ### Бинарный релиз (рекомендуется)
 
-1. Проверь codename ОС на Raspberry Pi:
+1. Проверь кодовое имя ОС на Raspberry Pi:
 ```bash
 grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
-2. Скачай подходящие файлы из [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
+2. Скачай подходящие файлы из [релизов GitHub](https://github.com/NextQuantum/EasyPi/releases):
    - `easypi-full-aarch64-trixie.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Trixie)
    - `SHA256SUMS.txt`
 3. Проверь контрольную сумму:
@@ -448,9 +459,9 @@ sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-> Текущий статус: на данный момент доступен только бинарный релиз для **Trixie**.
+> Официально поддерживается только **Trixie**.
 
-> Установщик теперь делает timestamp-бэкапы перед заменой управляемых файлов (например: `.env`, `systemd` юниты, nginx конфиг) в формате `*.bak-YYYYMMDD-HHMMSS`.
+> Установщик теперь делает резервные копии с меткой времени перед заменой управляемых файлов (например: `.env`, `systemd`-юниты, конфиг nginx) в формате `*.bak-YYYYMMDD-HHMMSS`.
 
 ### Требования
 
@@ -480,7 +491,7 @@ https://easypi.local/
 
 > `https://easypi.local/` может не открываться сразу после установки (mDNS/Avahi). Подожди 30-90 секунд или используй IP-адрес из вывода установщика.
 
-> **Логина и пароля по умолчанию нет.** При первом запуске создашь admin-аккаунт и получишь **recovery token** — сохрани.
+> **Логина и пароля по умолчанию нет.** При первом запуске создашь учётную запись администратора и получишь **токен восстановления** — сохрани его.
 
 ### Удаление
 
@@ -491,7 +502,7 @@ sudo bash ./uninstall.sh
 
 ### Диагностика
 
-Статус и логи backend:
+Статус и логи бэкенда:
 
 ```bash
 sudo systemctl status easypi-backend.service --no-pager -l
@@ -499,14 +510,14 @@ sudo journalctl -u easypi-backend.service -n 200 --no-pager
 sudo journalctl -xeu easypi-backend.service
 ```
 
-NetProtection и nginx:
+NetProtection и Nginx:
 
 ```bash
 sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-Если backend падает с `status=255/EXCEPTION`, проверь, что у тебя Debian Trixie и установлен релиз `...-trixie.tar.gz`.
+Если бэкенд падает с `status=255/EXCEPTION`, проверь, что у тебя Debian Trixie и установлен `...-trixie.tar.gz`.
 
 ---
 
@@ -514,16 +525,20 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 
 <div align="center">
 
-**EasyPi** — das All-in-One-Dashboard für Ihren Raspberry Pi.  
+**EasyPi** — die zentrale All-in-One-Oberfläche für Ihren Raspberry Pi.  
 Überwachung, Sicherheit und Kontrolle — ganz ohne SSH.
 
 </div>
 
 ---
 
+> ⚠️ **Status:** aktive Entwicklung.  
+> EasyPi wurde offiziell unter **Raspberry Pi OS Lite 64-bit (Debian Trixie)** getestet.  
+> Einige Funktionen können je nach Raspberry-Pi-Modell, Netzwerk und Systemkonfiguration unterschiedlich arbeiten.
+
 ## ✨ Funktionen
 
-### 🖥️ Dashboard & Echtzeit-Monitoring
+### 🖥️ Übersicht & Echtzeitüberwachung
 
 - Live-Metriken: **CPU · RAM · Temperatur · Festplatte**
 - **Netzwerkaktivität** (RX/TX-Graphen)
@@ -535,26 +550,26 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ### 🚀 Dienstverwaltung mit einem Klick
 
 - **WireGuard,Tailscale,Ollama** — in einem Klick
-- **Fertige Stacks**: Media Server · Smart Home · Monitoring
+- **Fertige Pakete**: Medienserver · Smart Home · Überwachung
 - **Dienstkatalog** mit ausführlichen Beschreibungen
 
 ---
 
-### 🔐 Enterprise-Sicherheit
+### 🔐 Sicherheit auf Unternehmensniveau
 
 | Funktion | Details |
 |---|---|
 | 2FA | TOTP-basierte Zwei-Faktor-Authentifizierung |
-| Sessions | Secure `httpOnly` + `SameSite` Cookies + JWT (7 Tage) |
+| Sitzungen | Geschützte `httpOnly`- und `SameSite`-Cookies + JWT (7 Tage) |
 | Sitzungsverwaltung | Geräteverfolgung & sofortiger Widerruf |
 | PiGuard Scanner | Automatische Schwachstellenerkennung |
 | Firewall | UFW / iptables-Verwaltung |
 | SSL/TLS | Vollständige Zertifikatunterstützung |
 | CSRF-Schutz | Alle zustandsändernden Operationen |
-| Rate Limiting | API-Brute-Force-Schutz |
+| Anfrageratenbegrenzung | Schutz der API vor Brute-Force-Angriffen |
 
-**🧭 Full Gateway Mode:**
-- Auto-Fix für Gateway-Routing-Schleifen
+**🧭 Voller Gateway-Modus:**
+- Automatische Korrektur von Gateway-Routing-Schleifen
 - Persistentes IP-Forwarding nach Neustarts
 - NAT bleibt aktiv bei Proxy-Neustarts
 
@@ -562,7 +577,7 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 
 ### 📵 Kindersicherung & Streaming-Blocker
 
-> Pro Gerät wird `DNS active / stale / not seen` angezeigt.
+> Pro Gerät wird `DNS aktiv / veraltet / nicht erkannt` angezeigt.
 
 **40+ gesperrte Dienste:** YouTube · Netflix · TikTok · Instagram · Facebook · WhatsApp · Telegram · Discord · Twitch · Spotify · Amazon Prime · Disney+ · HBO Max · Hulu · Reddit · Twitter · Roblox · Fortnite · Steam · Epic Games · und mehr.
 
@@ -573,9 +588,9 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 | DoH/DoT | Verschlüsselte DNS-Umgehung |
 | Ports | OpenVPN · IPSec · Tor · PPTP · Shadowsocks · SOCKS |
 
-**Umgehungsschutz:** 170+ Domains + 19 Ports
+**Umgehungsschutz:** 170+ Domänen + 19 Ports
 
-**Fail-Closed Quarantäne** — bei erkannter Umgehung sperrt EasyPi das **gesamte Internet** bis **Restore Internet** geklickt wird.
+**Fail-Closed-Quarantäne** — bei erkannter Umgehung sperrt EasyPi das **gesamte Internet**, bis **„Internet wiederherstellen“** geklickt wird.
 
 > 📌 WireGuard / Tailscale-Ports (51820, 51821) werden **nicht blockiert**.
 
@@ -591,25 +606,26 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 
 ### 🤖 KI-Assistent · 💾 Backup · 📁 Dateien · 💻 Terminal
 
-- **Backup & Restore** — geplante Sicherungen, Ein-Klick-Wiederherstellung
+- **KI-Chat (lokale LLMs über Ollama)** — allgemeiner KI-Chat mit lokalen Modellen (z. B. Qwen 2.5 7B, Llama 3.1 8B, DeepSeek-R1 14B); Vorschläge vor der Ausführung prüfen
+- **Sichern & Wiederherstellen** — geplante Sicherungen, Ein-Klick-Wiederherstellung
 - **Dateimanager** mit Code-Editor und AES-256-GCM Verschlüsselung
 - **WebSSH-Terminal** — vollständiger Shell-Zugriff im Browser
 - **RTSP-Kameras** — Live-Ansicht + Aufnahmeverwaltung
-- **PWA** — Als mobile App installierbar
-- **Netzwerk-Tools**: Port-Scanner, Speedtest, Topologie-Map
+- **PWA** — als mobile App installierbar
+- **Netzwerkwerkzeuge**: Port-Scanner, Speedtest, Topologiekarte
 
 ---
 
 ## 🚀 Schnellstart
 
-### Binary Release (Empfohlen)
+### Binär-Release (empfohlen)
 
-1. OS-Codename auf dem Raspberry Pi prüfen:
+1. Codename des Betriebssystems auf dem Raspberry Pi prüfen:
 ```bash
 grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
-2. Passende Artefakte aus [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen:
+2. Passende Artefakte aus den [GitHub-Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen:
    - `easypi-full-aarch64-trixie.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Trixie)
    - `SHA256SUMS.txt`
 3. Prüfsumme prüfen:
@@ -624,7 +640,7 @@ sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-> Aktueller Status: Derzeit ist nur das Binary-Release für **Trixie** verfügbar.
+> Offiziell wird derzeit nur **Trixie** unterstützt.
 
 > Der Installer erstellt jetzt vor dem Überschreiben verwalteter Dateien (z. B. `.env`, `systemd`-Units, nginx-Konfiguration) zeitgestempelte Backups im Format `*.bak-YYYYMMDD-HHMMSS`.
 
@@ -638,9 +654,9 @@ sudo bash /opt/EasyPi/install.sh --binary
 | Speicher | 16 GB SD-Karte | **32 GB SD-Karte** |
 | Netzwerk | Internetverbindung | Kabelgebundenes Ethernet |
 
-### Kompatibilitätsmatrix (Binary Releases)
+### Kompatibilitätsmatrix (Binär-Releases)
 
-| Release-Datei | Unterstütztes OS |
+| Release-Datei | Unterstütztes Betriebssystem |
 |---|---|
 | `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
@@ -667,7 +683,7 @@ sudo bash ./uninstall.sh
 
 ### Fehlersuche
 
-Backend-Status und Logs:
+Status und Protokolle des Backends:
 
 ```bash
 sudo systemctl status easypi-backend.service --no-pager -l
@@ -682,32 +698,32 @@ sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-Wenn der Backend-Prozess mit `status=255/EXCEPTION` abstürzt, prüfe, ob dein System Debian Trixie ist und ob `...-trixie.tar.gz` installiert wurde.
+Wenn der Backend-Prozess mit `status=255/EXCEPTION` abstürzt, prüfe, ob Debian Trixie läuft und `...-trixie.tar.gz` installiert wurde.
 
 ---
 
 <div align="center">
 
-## 📜 License · Лицензия · Lizenz
+## 📜 Лицензия · Lizenz
 
-Distributed under a **proprietary license** — see [LICENSE](LICENSE), [EULA.txt](EULA.txt), and [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
+Распространяется по **проприетарной лицензии** — см. [LICENSE](LICENSE), [EULA.txt](EULA.txt) и [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
 
 ---
 
-## 🤝 Contributing
+## 🤝 Участие в проекте
 
-| How to help | Action |
+| Как помочь | Действие |
 |---|---|
-| 🐛 Found a bug? | [Open an Issue](https://github.com/NextQuantum/EasyPi/issues) |
-| 💡 Have an idea? | Describe your feature request |
-| 🔧 Want to code? | Submit a Pull Request |
-| 📖 Improve docs? | Updates are always welcome |
-| ⭐ Like EasyPi? | Star the repo — it helps! |
+| 🐛 Нашли ошибку? | [Создать Issue](https://github.com/NextQuantum/EasyPi/issues) |
+| 💡 Есть идея? | Опишите ваше предложение |
+| 🔧 Хотите помочь кодом? | Отправьте Pull Request |
+| 📖 Хотите улучшить документацию? | Любые правки приветствуются |
+| ⭐ Нравится EasyPi? | Поставьте звезду репозиторию |
 
 ---
 
-<sub>Made with ❤️ for the Raspberry Pi community</sub>
+<sub>Сделано для сообщества Raspberry Pi</sub>
 
-[⬆ Back to top](#easypi)
+[⬆ Наверх](#easypi)
 
 </div>

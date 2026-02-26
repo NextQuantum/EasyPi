@@ -1,1 +1,1 @@
-da4b4bae0f1e28027e33f8ec61a14a3ec739fa0f6d2b4a46274399cc8072bf97  easypi-full-aarch64.tar.gz
+8a03a52926167ece1c538a2879c1920488b648781ebf1bfb468a519fb9f9b930  easypi-full-aarch64-trixie.tar.gz

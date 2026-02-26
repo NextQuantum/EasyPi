@@ -1,0 +1,92 @@
+END USER LICENSE AGREEMENT (EULA)
+EasyPi
+
+Last updated: 2026-02-25
+
+IMPORTANT: READ THIS AGREEMENT BEFORE USING EASYPI.
+
+This EULA is a legal agreement between you ("User") and the EasyPi author
+("Author"). It supplements the LICENSE file and describes operational risk and
+user responsibilities.
+
+--------------------------------------------------------------------
+1. SOFTWARE DESCRIPTION
+--------------------------------------------------------------------
+
+EasyPi is a self-hosted network/security platform that can manage DNS,
+firewalling, routing, VPN, monitoring, and related system services.
+
+It operates at low network levels and may affect device connectivity.
+
+--------------------------------------------------------------------
+2. LICENSE RELATIONSHIP
+--------------------------------------------------------------------
+
+Your legal rights to use EasyPi are defined by LICENSE.
+If source code is visible to you, visibility alone does not grant redistribution
+or commercial rights unless explicitly stated in LICENSE or separate written
+permission.
+
+--------------------------------------------------------------------
+3. USER RESPONSIBILITY
+--------------------------------------------------------------------
+
+You are responsible for:
+
+- Correct installation and configuration.
+- Backups before applying major changes.
+- Compliance with local laws (privacy, network usage, parental control, etc.).
+- Informing users of your network when legally required.
+
+--------------------------------------------------------------------
+4. NETWORK AND SECURITY IMPACT
+--------------------------------------------------------------------
+
+You acknowledge EasyPi may:
+
+- Intercept, block, redirect, or classify traffic.
+- Log DNS/network metadata.
+- Restrict or disconnect devices based on configured policies.
+
+Incorrect configuration may cause internet outages or partial service failures.
+
+--------------------------------------------------------------------
+5. THIRD-PARTY SOFTWARE
+--------------------------------------------------------------------
+
+EasyPi uses third-party packages and services. Their license terms apply to
+those components. EasyPi's proprietary terms do not replace third-party
+obligations.
+
+--------------------------------------------------------------------
+6. NO WARRANTY
+--------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED.
+
+--------------------------------------------------------------------
+7. LIMITATION OF LIABILITY
+--------------------------------------------------------------------
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR SHALL NOT BE LIABLE FOR
+DIRECT OR INDIRECT DAMAGES, INCLUDING LOSS OF CONNECTIVITY, DATA LOSS,
+MISCONFIGURATION, OR SERVICE INTERRUPTION.
+
+--------------------------------------------------------------------
+8. TERMINATION
+--------------------------------------------------------------------
+
+This EULA remains in effect until terminated. Violation of LICENSE or this EULA
+terminates your rights to use EasyPi.
+
+--------------------------------------------------------------------
+9. ACCEPTANCE
+--------------------------------------------------------------------
+
+By installing, running, or using EasyPi, you acknowledge that you have read and
+accepted this EULA and LICENSE.
+
+--------------------------------------------------------------------
+
+END OF AGREEMENT
