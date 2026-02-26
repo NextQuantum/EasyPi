@@ -231,7 +231,6 @@ grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
 2. Download matching artifacts from [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
-   - `easypi-full-aarch64-bookworm.tar.gz` for Raspberry Pi OS Lite 64-bit (Debian Bookworm)
    - `easypi-full-aarch64-trixie.tar.gz` for Raspberry Pi OS Lite 64-bit (Debian Trixie)
    - `SHA256SUMS.txt`
 3. Verify checksum:
@@ -242,9 +241,11 @@ sha256sum -c SHA256SUMS.txt
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
+
+> Current status: only the **Trixie** binary release is available at the moment.
 
 > Installer now creates timestamped backups before replacing managed files (for example: `.env`, `systemd` units, nginx config) using `*.bak-YYYYMMDD-HHMMSS`.
 
@@ -254,7 +255,7 @@ sudo bash /opt/EasyPi/install.sh --binary
 |---|---|---|
 | Hardware | Raspberry Pi 3B+ | **Pi 4 · 4 GB RAM** |
 | Architecture | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
-| OS | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
+| OS | Raspberry Pi OS Lite 64-bit (Debian Trixie) | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 | Storage | 16 GB SD card | **32 GB SD card** |
 | Network | Internet connection | Wired Ethernet |
 
@@ -262,7 +263,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 
 | Release artifact | Supported OS |
 |---|---|
-| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
 | `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### First Access
@@ -303,7 +303,7 @@ sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-If backend crashes with `status=255/EXCEPTION`, you most likely installed the wrong binary for your OS codename (Bookworm vs Trixie).
+If backend crashes with `status=255/EXCEPTION`, check that your system is Debian Trixie and that you installed the `...-trixie.tar.gz` release.
 
 ---
 
@@ -434,7 +434,6 @@ grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
 2. Скачай подходящие файлы из [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
-   - `easypi-full-aarch64-bookworm.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Bookworm)
    - `easypi-full-aarch64-trixie.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Trixie)
    - `SHA256SUMS.txt`
 3. Проверь контрольную сумму:
@@ -445,9 +444,11 @@ sha256sum -c SHA256SUMS.txt
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
+
+> Текущий статус: на данный момент доступен только бинарный релиз для **Trixie**.
 
 > Установщик теперь делает timestamp-бэкапы перед заменой управляемых файлов (например: `.env`, `systemd` юниты, nginx конфиг) в формате `*.bak-YYYYMMDD-HHMMSS`.
 
@@ -457,7 +458,7 @@ sudo bash /opt/EasyPi/install.sh --binary
 |---|---|---|
 | Железо | Raspberry Pi 3B+ | **Pi 4 · 4 ГБ ОЗУ** |
 | Архитектура | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
-| ОС | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
+| ОС | Raspberry Pi OS Lite 64-bit (Debian Trixie) | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 | Хранилище | SD карта 16 ГБ | **SD карта 32 ГБ** |
 | Сеть | Интернет-подключение | Проводной Ethernet |
 
@@ -465,7 +466,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 
 | Файл релиза | Поддерживаемая ОС |
 |---|---|
-| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
 | `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### Первый вход
@@ -506,7 +506,7 @@ sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-Если backend падает с `status=255/EXCEPTION`, чаще всего установлен не тот бинарник под codename ОС (Bookworm vs Trixie).
+Если backend падает с `status=255/EXCEPTION`, проверь, что у тебя Debian Trixie и установлен релиз `...-trixie.tar.gz`.
 
 ---
 
@@ -610,7 +610,6 @@ grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
 2. Passende Artefakte aus [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen:
-   - `easypi-full-aarch64-bookworm.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Bookworm)
    - `easypi-full-aarch64-trixie.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Trixie)
    - `SHA256SUMS.txt`
 3. Prüfsumme prüfen:
@@ -621,9 +620,11 @@ sha256sum -c SHA256SUMS.txt
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
+
+> Aktueller Status: Derzeit ist nur das Binary-Release für **Trixie** verfügbar.
 
 > Der Installer erstellt jetzt vor dem Überschreiben verwalteter Dateien (z. B. `.env`, `systemd`-Units, nginx-Konfiguration) zeitgestempelte Backups im Format `*.bak-YYYYMMDD-HHMMSS`.
 
@@ -633,7 +634,7 @@ sudo bash /opt/EasyPi/install.sh --binary
 |---|---|---|
 | Hardware | Raspberry Pi 3B+ | **Pi 4 · 4 GB RAM** |
 | Architektur | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
-| Betriebssystem | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
+| Betriebssystem | Raspberry Pi OS Lite 64-bit (Debian Trixie) | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 | Speicher | 16 GB SD-Karte | **32 GB SD-Karte** |
 | Netzwerk | Internetverbindung | Kabelgebundenes Ethernet |
 
@@ -641,7 +642,6 @@ sudo bash /opt/EasyPi/install.sh --binary
 
 | Release-Datei | Unterstütztes OS |
 |---|---|
-| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
 | `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### Erster Zugriff
@@ -682,7 +682,7 @@ sudo systemctl status easypi-netprotection.service nginx --no-pager -l
 sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 ```
 
-Wenn der Backend-Prozess mit `status=255/EXCEPTION` abstürzt, wurde meist das falsche Binary für den OS-Codename installiert (Bookworm vs Trixie).
+Wenn der Backend-Prozess mit `status=255/EXCEPTION` abstürzt, prüfe, ob dein System Debian Trixie ist und ob `...-trixie.tar.gz` installiert wurde.
 
 ---
 
