@@ -61,7 +61,7 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ### 🚀 One-Click Service Management
 
-- Install **WireGuard, Tailscale, Ollama** — in one click
+- Install **WireGuard,Tailscale,Ollama** — in one click
 - **Curated bundles**: Media Server · Smart Home · Monitoring
 - **Service catalog** with detailed descriptions and state tracking
 
@@ -126,7 +126,7 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ---
 
-### 🤖 AI Assistant 
+### 🤖 AI Assistant (Claude)
 
 - Installs and configures services on demand
 - Diagnoses problems from system logs
@@ -225,36 +225,45 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 
 ### Binary Release (Recommended)
 
-1. Download the latest `easypi-full-aarch64.tar.gz` from [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases).
-2. Verify checksum against [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
-3. Install on Raspberry Pi:
+1. Check your OS codename on the Raspberry Pi:
+```bash
+grep VERSION_CODENAME /etc/os-release
+uname -m
+```
+2. Download matching artifacts from [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
+   - `easypi-full-aarch64-bookworm.tar.gz` for Raspberry Pi OS Lite 64-bit (Debian Bookworm)
+   - `easypi-full-aarch64-trixie.tar.gz` for Raspberry Pi OS Lite 64-bit (Debian Trixie)
+   - `SHA256SUMS.txt`
+3. Verify checksum:
+```bash
+sha256sum -c SHA256SUMS.txt
+```
+4. Install on Raspberry Pi:
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-or 
-
-```bash
-wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
-sudo mkdir -p /opt/EasyPi
-sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
-sudo chmod +x /opt/EasyPi/install.sh
-sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
-sudo /opt/EasyPi/install.sh --binary
-```
-
+> Installer now creates timestamped backups before replacing managed files (for example: `.env`, `systemd` units, nginx config) using `*.bak-YYYYMMDD-HHMMSS`.
 
 ### Requirements
 
 | Requirement | Minimum | Recommended |
 |---|---|---|
-| Hardware | Raspberry Pi 3 | **Pi 4 · 4 GB RAM** |
-| OS | Raspberry Pi OS Bullseye | Latest Raspberry Pi OS |
+| Hardware | Raspberry Pi 3B+ | **Pi 4 · 4 GB RAM** |
+| Architecture | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
+| OS | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
 | Storage | 16 GB SD card | **32 GB SD card** |
 | Network | Internet connection | Wired Ethernet |
+
+### Release Compatibility Matrix
+
+| Release artifact | Supported OS |
+|---|---|
+| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
+| `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### First Access
 
@@ -266,7 +275,35 @@ https://easypi.local/
 
 > If the browser shows `Your connection is not private` / `net::ERR_CERT_AUTHORITY_INVALID` on the local EasyPi IP — this is expected with a self-signed certificate. On a trusted home network, click **Proceed to site (unsafe)**.
 
+> `https://easypi.local/` may take 30-90 seconds after install (mDNS/Avahi propagation). If it does not resolve, use the IP URL shown by installer.
+
 > **No default credentials.** On first launch EasyPi shows a setup screen to create your admin account and displays a **recovery token** — save it securely.
+
+### Uninstall
+
+```bash
+cd /opt/EasyPi
+sudo bash ./uninstall.sh
+```
+
+### Troubleshooting
+
+Backend status and logs:
+
+```bash
+sudo systemctl status easypi-backend.service --no-pager -l
+sudo journalctl -u easypi-backend.service -n 200 --no-pager
+sudo journalctl -xeu easypi-backend.service
+```
+
+NetProtection and nginx:
+
+```bash
+sudo systemctl status easypi-netprotection.service nginx --no-pager -l
+sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
+```
+
+If backend crashes with `status=255/EXCEPTION`, you most likely installed the wrong binary for your OS codename (Bookworm vs Trixie).
 
 ---
 
@@ -294,7 +331,7 @@ https://easypi.local/
 
 ### 🚀 Управление сервисами
 
-- **WireGuard, Tailscale, Ollama** — в один клик
+- **WireGuard,Tailscale,Ollama** — в один клик
 - **Готовые наборы**: Media Server · Smart Home · Monitoring
 - **Каталог сервисов** с описаниями
 
@@ -391,35 +428,45 @@ https://easypi.local/
 
 ### Бинарный релиз (рекомендуется)
 
-1. Скачай `easypi-full-aarch64.tar.gz` из [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases).
-2. Проверь контрольную сумму: [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
-3. Установи:
+1. Проверь codename ОС на Raspberry Pi:
+```bash
+grep VERSION_CODENAME /etc/os-release
+uname -m
+```
+2. Скачай подходящие файлы из [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
+   - `easypi-full-aarch64-bookworm.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Bookworm)
+   - `easypi-full-aarch64-trixie.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Trixie)
+   - `SHA256SUMS.txt`
+3. Проверь контрольную сумму:
+```bash
+sha256sum -c SHA256SUMS.txt
+```
+4. Установи:
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
 
-или
-
-```bash
-wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
-sudo mkdir -p /opt/EasyPi
-sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
-sudo chmod +x /opt/EasyPi/install.sh
-sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
-sudo /opt/EasyPi/install.sh --binary
-```
+> Установщик теперь делает timestamp-бэкапы перед заменой управляемых файлов (например: `.env`, `systemd` юниты, nginx конфиг) в формате `*.bak-YYYYMMDD-HHMMSS`.
 
 ### Требования
 
 | Требование | Минимум | Рекомендуется |
 |---|---|---|
-| Железо | Raspberry Pi 3 | **Pi 4 · 4 ГБ ОЗУ** |
-| ОС | Raspberry Pi OS Bullseye | Последняя версия |
+| Железо | Raspberry Pi 3B+ | **Pi 4 · 4 ГБ ОЗУ** |
+| Архитектура | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
+| ОС | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
 | Хранилище | SD карта 16 ГБ | **SD карта 32 ГБ** |
 | Сеть | Интернет-подключение | Проводной Ethernet |
+
+### Совместимость бинарных релизов
+
+| Файл релиза | Поддерживаемая ОС |
+|---|---|
+| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
+| `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### Первый вход
 
@@ -431,7 +478,35 @@ https://easypi.local/
 
 > Если браузер показывает `Подключение не защищено` — нормально для самоподписанного сертификата. Нажми **«Перейти на сайт (небезопасно)»**.
 
+> `https://easypi.local/` может не открываться сразу после установки (mDNS/Avahi). Подожди 30-90 секунд или используй IP-адрес из вывода установщика.
+
 > **Логина и пароля по умолчанию нет.** При первом запуске создашь admin-аккаунт и получишь **recovery token** — сохрани.
+
+### Удаление
+
+```bash
+cd /opt/EasyPi
+sudo bash ./uninstall.sh
+```
+
+### Диагностика
+
+Статус и логи backend:
+
+```bash
+sudo systemctl status easypi-backend.service --no-pager -l
+sudo journalctl -u easypi-backend.service -n 200 --no-pager
+sudo journalctl -xeu easypi-backend.service
+```
+
+NetProtection и nginx:
+
+```bash
+sudo systemctl status easypi-netprotection.service nginx --no-pager -l
+sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
+```
+
+Если backend падает с `status=255/EXCEPTION`, чаще всего установлен не тот бинарник под codename ОС (Bookworm vs Trixie).
 
 ---
 
@@ -459,7 +534,7 @@ https://easypi.local/
 
 ### 🚀 Dienstverwaltung mit einem Klick
 
-- **WireGuard, Tailscale, Ollama** — in einem Klick
+- **WireGuard,Tailscale,Ollama** — in einem Klick
 - **Fertige Stacks**: Media Server · Smart Home · Monitoring
 - **Dienstkatalog** mit ausführlichen Beschreibungen
 
@@ -529,35 +604,45 @@ https://easypi.local/
 
 ### Binary Release (Empfohlen)
 
-1. `easypi-full-aarch64.tar.gz` von [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen.
-2. Prüfsumme verifizieren: [`distribution/releases/SHA256SUMS.txt`](distribution/releases/SHA256SUMS.txt).
-3. Installieren:
+1. OS-Codename auf dem Raspberry Pi prüfen:
+```bash
+grep VERSION_CODENAME /etc/os-release
+uname -m
+```
+2. Passende Artefakte aus [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen:
+   - `easypi-full-aarch64-bookworm.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Bookworm)
+   - `easypi-full-aarch64-trixie.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Trixie)
+   - `SHA256SUMS.txt`
+3. Prüfsumme prüfen:
+```bash
+sha256sum -c SHA256SUMS.txt
+```
+4. Installieren:
 
 ```bash
 sudo mkdir -p /opt/EasyPi
-sudo tar -xzf easypi-full-aarch64.tar.gz -C /opt/EasyPi
+sudo tar -xzf easypi-full-aarch64-<bookworm|trixie>.tar.gz -C /opt/EasyPi
 sudo bash /opt/EasyPi/install.sh --binary
 ```
-oder
 
-```bash
-wget -O easypi-full-aarch64.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64.tar.gz"
-sudo mkdir -p /opt/EasyPi
-sudo tar -xzvf easypi-full-aarch64.tar.gz -C /opt/EasyPi
-sudo chmod +x /opt/EasyPi/install.sh
-sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
-sudo /opt/EasyPi/install.sh --binary
-```
+> Der Installer erstellt jetzt vor dem Überschreiben verwalteter Dateien (z. B. `.env`, `systemd`-Units, nginx-Konfiguration) zeitgestempelte Backups im Format `*.bak-YYYYMMDD-HHMMSS`.
 
 ### Anforderungen
 
 | Anforderung | Minimum | Empfohlen |
 |---|---|---|
-| Hardware | Raspberry Pi 3 | **Pi 4 · 4 GB RAM** |
-| Betriebssystem | Raspberry Pi OS Bullseye | Aktuelle Raspberry Pi OS |
+| Hardware | Raspberry Pi 3B+ | **Pi 4 · 4 GB RAM** |
+| Architektur | ARM64 (`aarch64`) | ARM64 (`aarch64`) |
+| Betriebssystem | Raspberry Pi OS Lite 64-bit (Bookworm/Trixie) | Raspberry Pi OS Lite 64-bit (latest stable) |
 | Speicher | 16 GB SD-Karte | **32 GB SD-Karte** |
 | Netzwerk | Internetverbindung | Kabelgebundenes Ethernet |
 
+### Kompatibilitätsmatrix (Binary Releases)
+
+| Release-Datei | Unterstütztes OS |
+|---|---|
+| `easypi-full-aarch64-bookworm.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Bookworm) |
+| `easypi-full-aarch64-trixie.tar.gz` | Raspberry Pi OS Lite 64-bit (Debian Trixie) |
 
 ### Erster Zugriff
 
@@ -569,7 +654,35 @@ https://easypi.local/
 
 > Wenn der Browser `Verbindung ist nicht privat` zeigt — normal bei einem selbstsignierten Zertifikat. Im vertrauenswürdigen Heimnetz **„Weiter zur Website (unsicher)"** wählen.
 
+> `https://easypi.local/` kann direkt nach der Installation 30-90 Sekunden brauchen (mDNS/Avahi). Falls nicht erreichbar, die IP-URL verwenden.
+
 > **Keine Standard-Anmeldedaten.** Beim ersten Start Admin-Konto erstellen und **Recovery-Token** sichern.
+
+### Deinstallation
+
+```bash
+cd /opt/EasyPi
+sudo bash ./uninstall.sh
+```
+
+### Fehlersuche
+
+Backend-Status und Logs:
+
+```bash
+sudo systemctl status easypi-backend.service --no-pager -l
+sudo journalctl -u easypi-backend.service -n 200 --no-pager
+sudo journalctl -xeu easypi-backend.service
+```
+
+NetProtection und nginx:
+
+```bash
+sudo systemctl status easypi-netprotection.service nginx --no-pager -l
+sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
+```
+
+Wenn der Backend-Prozess mit `status=255/EXCEPTION` abstürzt, wurde meist das falsche Binary für den OS-Codename installiert (Bookworm vs Trixie).
 
 ---
 
@@ -577,7 +690,7 @@ https://easypi.local/
 
 ## 📜 License · Лицензия · Lizenz
 
-Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA.txt](EULA.txt).
+Distributed under a **proprietary license** — see [LICENSE](LICENSE), [EULA.txt](EULA.txt), and [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
 
 ---
 
@@ -598,7 +711,3 @@ Distributed under a **proprietary license** — see [LICENSE](LICENSE) and [EULA
 [⬆ Back to top](#easypi)
 
 </div>
-
-
-
-

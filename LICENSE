@@ -1,113 +1,88 @@
-EasyPi License
-Version 1.0
+EasyPi Proprietary License
+Version 1.1
 
 Copyright (c) 2026 Serghei (EasyPi Project).
 All rights reserved.
 
-IMPORTANT: PLEASE READ THIS LICENSE CAREFULLY BEFORE USING THIS SOFTWARE.
+IMPORTANT: READ THIS LICENSE BEFORE INSTALLING OR USING EASYPI.
 
-This software ("EasyPi") is provided as a compiled binary and related runtime files.
-The source code is NOT provided and remains the exclusive intellectual property
-of the copyright holder.
+This software is licensed, not sold.
 
-The software is protected by international copyright and intellectual
-property laws.
-
---------------------------------------------------------------------
-1. GRANT OF LICENSE
---------------------------------------------------------------------
-
-Permission is granted to install and use EasyPi free of charge
-ONLY for personal, non-commercial purposes.
-
-"Personal use" means usage in a private home or personal laboratory
-environment, not intended to generate revenue or provide services
-to third parties.
+The EasyPi project may be distributed as binaries, scripts, configuration files,
+and, in some repositories, source code snapshots. All such materials are
+proprietary unless a separate written license is provided.
 
 --------------------------------------------------------------------
-2. RESTRICTIONS
+1. LICENSE GRANT
 --------------------------------------------------------------------
 
-You may NOT:
+You are granted a limited, revocable, non-exclusive, non-transferable license
+to install and use EasyPi for personal, non-commercial purposes.
 
-- Modify, reverse engineer, decompile, disassemble, or attempt to
-  extract the source code from the binary.
-- Redistribute, sublicense, sell, rent, lease, or otherwise transfer
-  the software to third parties.
-- Use the software in any commercial environment, including but not
-  limited to companies, hosting providers, ISPs, or managed services.
-- Offer EasyPi as a service (SaaS, PaaS, hosted solution, VPN/DNS service).
-- Publish, mirror, or repackage the software or any part of it.
+"Personal, non-commercial" means private home or lab use that does not provide
+paid services, hosted services, or commercial operations for third parties.
+
+--------------------------------------------------------------------
+2. WHAT YOU MAY DO
+--------------------------------------------------------------------
+
+You may:
+
+- Install and run official EasyPi releases on your own devices.
+- If source code is available to you, modify it for private,
+  non-commercial internal use only.
+
+--------------------------------------------------------------------
+3. WHAT YOU MAY NOT DO
+--------------------------------------------------------------------
+
+You may NOT, without prior written permission:
+
+- Redistribute EasyPi binaries, source code, or modified versions.
+- Publish, mirror, repackage, sublicense, sell, rent, or transfer EasyPi.
+- Use EasyPi in commercial environments or managed/hosted services.
+- Offer EasyPi as SaaS/PaaS/VPN/DNS or any public-facing service.
 - Remove or alter copyright, license, or ownership notices.
 
 --------------------------------------------------------------------
-3. OWNERSHIP
+4. THIRD-PARTY COMPONENTS
 --------------------------------------------------------------------
 
-EasyPi is licensed, not sold.
+EasyPi includes or depends on third-party software with their own licenses.
+Your use of those components must comply with their respective license terms.
 
-All rights, title, and interest in and to the software, including
-but not limited to binaries, architecture, logic, design, and
-documentation, remain the exclusive property of the copyright holder.
-
---------------------------------------------------------------------
-4. NO WARRANTY
---------------------------------------------------------------------
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-NON-INFRINGEMENT.
-
-THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE
-SOFTWARE REMAINS WITH YOU.
+This license applies only to EasyPi-owned code/content and does not replace
+or override third-party license obligations.
 
 --------------------------------------------------------------------
-5. LIMITATION OF LIABILITY
+5. NO WARRANTY
 --------------------------------------------------------------------
 
-IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR
-ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-THIS INCLUDES, BUT IS NOT LIMITED TO:
-- NETWORK MISCONFIGURATION
-- LOSS OF INTERNET CONNECTIVITY
-- DATA LOSS
-- SECURITY INCIDENTS
-- SERVICE INTERRUPTIONS
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
 --------------------------------------------------------------------
-6. TERMINATION
+6. LIMITATION OF LIABILITY
 --------------------------------------------------------------------
 
-Any violation of this License automatically terminates your rights
-to use the software.
-
-Upon termination, you must immediately stop using the software
-and remove it from all systems under your control.
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR SHALL NOT BE LIABLE FOR ANY
+CLAIMS, DAMAGES, OR OTHER LIABILITY, INCLUDING NETWORK OUTAGES, DATA LOSS,
+MISCONFIGURATION, OR SERVICE INTERRUPTION, ARISING FROM USE OF THE SOFTWARE.
 
 --------------------------------------------------------------------
-7. FUTURE COMMERCIAL LICENSE
+7. TERMINATION
 --------------------------------------------------------------------
 
-The author reserves the right to offer separate commercial licenses,
-paid editions, or additional features in the future.
-
-Use of EasyPi under this License does not grant any rights to
-future versions or commercial offerings.
+Any violation of this license terminates your rights automatically.
+Upon termination, you must stop using and remove EasyPi from your systems.
 
 --------------------------------------------------------------------
 8. ACCEPTANCE
 --------------------------------------------------------------------
 
-By installing, running, or using EasyPi, you acknowledge that you
-have read, understood, and agreed to the terms of this License.
-
-If you do not agree to these terms, you must not install or use
-this software.
+By installing, running, or using EasyPi, you acknowledge that you have read
+and accepted this license.
 
 --------------------------------------------------------------------
 
