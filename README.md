@@ -234,9 +234,12 @@ More screenshots: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)
 grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
-2. Download matching artifacts from [GitHub Releases](https://github.com/NextQuantum/EasyPi/releases):
-   - `easypi-full-aarch64-trixie.tar.gz` for Raspberry Pi OS Lite 64-bit (Debian Trixie)
-   - `SHA256SUMS.txt`
+2. Download release archive and checksum file:
+```bash
+cd ~
+wget -O easypi-full-aarch64-trixie.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64-trixie.tar.gz"
+wget -O SHA256SUMS.txt "https://github.com/NextQuantum/EasyPi/releases/latest/download/SHA256SUMS.txt"
+```
 3. Verify checksum:
 ```bash
 sha256sum -c SHA256SUMS.txt
@@ -246,7 +249,9 @@ sha256sum -c SHA256SUMS.txt
 ```bash
 sudo mkdir -p /opt/EasyPi
 sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
-sudo bash /opt/EasyPi/install.sh --binary
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
 ```
 
 > Official support status: **only Trixie is officially supported right now**.
@@ -444,9 +449,12 @@ If backend crashes with `status=255/EXCEPTION`, make sure your system is Debian 
 grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
-2. Скачай подходящие файлы из [релизов GitHub](https://github.com/NextQuantum/EasyPi/releases):
-   - `easypi-full-aarch64-trixie.tar.gz` для Raspberry Pi OS Lite 64-bit (Debian Trixie)
-   - `SHA256SUMS.txt`
+2. Скачай архив релиза и файл контрольных сумм:
+```bash
+cd ~
+wget -O easypi-full-aarch64-trixie.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64-trixie.tar.gz"
+wget -O SHA256SUMS.txt "https://github.com/NextQuantum/EasyPi/releases/latest/download/SHA256SUMS.txt"
+```
 3. Проверь контрольную сумму:
 ```bash
 sha256sum -c SHA256SUMS.txt
@@ -456,7 +464,9 @@ sha256sum -c SHA256SUMS.txt
 ```bash
 sudo mkdir -p /opt/EasyPi
 sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
-sudo bash /opt/EasyPi/install.sh --binary
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
 ```
 
 > Официально поддерживается только **Trixie**.
@@ -625,9 +635,12 @@ sudo journalctl -u easypi-netprotection.service -n 200 --no-pager
 grep VERSION_CODENAME /etc/os-release
 uname -m
 ```
-2. Passende Artefakte aus den [GitHub-Releases](https://github.com/NextQuantum/EasyPi/releases) herunterladen:
-   - `easypi-full-aarch64-trixie.tar.gz` für Raspberry Pi OS Lite 64-bit (Debian Trixie)
-   - `SHA256SUMS.txt`
+2. Release-Archiv und Prüfsummen-Datei herunterladen:
+```bash
+cd ~
+wget -O easypi-full-aarch64-trixie.tar.gz "https://github.com/NextQuantum/EasyPi/releases/latest/download/easypi-full-aarch64-trixie.tar.gz"
+wget -O SHA256SUMS.txt "https://github.com/NextQuantum/EasyPi/releases/latest/download/SHA256SUMS.txt"
+```
 3. Prüfsumme prüfen:
 ```bash
 sha256sum -c SHA256SUMS.txt
@@ -637,7 +650,9 @@ sha256sum -c SHA256SUMS.txt
 ```bash
 sudo mkdir -p /opt/EasyPi
 sudo tar -xzf easypi-full-aarch64-trixie.tar.gz -C /opt/EasyPi
-sudo bash /opt/EasyPi/install.sh --binary
+sudo chmod +x /opt/EasyPi/install.sh
+sudo sed -i 's/\r$//' /opt/EasyPi/install.sh
+sudo /opt/EasyPi/install.sh --binary
 ```
 
 > Offiziell wird derzeit nur **Trixie** unterstützt.
