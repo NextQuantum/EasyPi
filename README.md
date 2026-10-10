@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img alt="EasyPi 1.1.0" src="https://img.shields.io/badge/Version-1.1.0-FF6B35?style=for-the-badge" />
+  <img alt="EasyPi 1.1.1" src="https://img.shields.io/badge/Version-1.1.1-FF6B35?style=for-the-badge" />
   <img alt="Raspberry Pi OS" src="https://img.shields.io/badge/Raspberry%20Pi%20OS-Trixie-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white" />
   <img alt="ARM64" src="https://img.shields.io/badge/Target-ARM64-2563EB?style=for-the-badge" />
   <img alt="Self-hosted" src="https://img.shields.io/badge/Deployment-Self--hosted-0F766E?style=for-the-badge" />
@@ -45,34 +45,31 @@ Guard Security combines DNS policy with network observations. PRISM classifies t
   <img src="assets/screenshots/guard-overview.webp" alt="EasyPi Guard Security dashboard" width="100%" />
 </p>
 
-<details>
-<summary><strong>Explore Guard Security</strong></summary>
+### Guard Security modules
 
 ### Shadow Mode
 
-Observe how rules would behave before using them for enforcement.
+Observe detections and proposed actions before enabling enforcement. This gives administrators time to review how policies affect real traffic without immediately blocking requests.
 
 <img src="assets/screenshots/shadow-mode.webp" alt="EasyPi Shadow Mode" width="100%" />
 
 ### PRISM heuristics
 
-Review learned traffic behavior, confidence, and heuristic findings.
+Review learned traffic behavior, confidence scores, anomalies, and heuristic findings. PRISM builds a local behavioral picture from traffic that passes through EasyPi and helps highlight activity that deserves attention.
 
 <img src="assets/screenshots/prism-heuristics.webp" alt="EasyPi PRISM heuristics engine" width="100%" />
 
 ### Parental controls
 
-Choose devices, content categories, schedules, and access rules from one panel.
+Choose a known device, block selected content categories, set access rules, and create time schedules such as bedtime or study hours. Device identity follows observed network information, including MAC changes when EasyPi can correlate them safely.
 
 <img src="assets/screenshots/parental-controls.webp" alt="EasyPi parental controls" width="100%" />
 
 ### Ad and tracker analysis
 
-Inspect detected advertising and tracking activity and manage blocking policy.
+Inspect detected advertising and tracking activity, see what was blocked, and manage the policy used by protected devices.
 
 <img src="assets/screenshots/ad-tracker-ai.webp" alt="EasyPi ad and tracker analysis" width="100%" />
-
-</details>
 
 ## Connectivity and privacy
 
@@ -89,26 +86,31 @@ Chameleon is a single-hop tunnel between EasyPi and a user-controlled VPS. It en
   <img src="assets/screenshots/stealth.webp" alt="EasyPi Chameleon Stealth" width="100%" />
 </p>
 
-<details>
-<summary><strong>Explore connectivity</strong></summary>
+### Connectivity modules
 
 ### WireGuard VPN
+
+Create and manage WireGuard clients for secure access to the home network. EasyPi displays the endpoint, server key, client list, and downloadable or QR-based client configuration.
 
 <img src="assets/screenshots/vpn.webp" alt="EasyPi WireGuard VPN" width="100%" />
 
 ### Personal DNS
 
+Deploy an encrypted DNS service to a supported VPS and use it through WireGuard, DNS-over-HTTPS, or DNS-over-TLS. The panel checks certificate and service status and shows the connection details required by client devices.
+
 <img src="assets/screenshots/personal-dns.webp" alt="EasyPi Personal DNS" width="100%" />
 
 ### Tailscale remote access
+
+Connect EasyPi and personal devices through Tailscale without exposing the management panel directly to the public internet. Remote Access can advertise approved local subnets and show connected devices and routing state.
 
 <img src="assets/screenshots/remote-access.webp" alt="EasyPi Tailscale remote access" width="100%" />
 
 ### Internet Encryption
 
-<img src="assets/screenshots/internet-encryption.webp" alt="EasyPi Internet Encryption" width="100%" />
+Route selected forwarded devices through a supported outbound VPN provider. EasyPi controls the tunnel lifecycle, DNS handling, device selection, and fail-closed behavior for traffic assigned to the encrypted path.
 
-</details>
+<img src="assets/screenshots/internet-encryption.webp" alt="EasyPi Internet Encryption" width="100%" />
 
 ## Cloud, cameras, and local AI
 
@@ -125,18 +127,19 @@ PiCloud organizes uploads by type and supports client-side EPEC encryption. Smal
   </tr>
 </table>
 
-<details>
-<summary><strong>Explore cameras</strong></summary>
+### IP cameras and recordings
 
 ### Camera management
+
+Add an IP camera by address and credentials, let EasyPi test common RTSP paths, or enter the camera's path manually. The camera panel provides live viewing, snapshots, connection status, and PTZ controls when the camera supports them. Camera credentials are stored encrypted and are not shown again in the interface.
 
 <img src="assets/screenshots/cameras.webp" alt="EasyPi IP camera management" width="100%" />
 
 ### Recordings
 
-<img src="assets/screenshots/camera-recordings.webp" alt="EasyPi camera recordings" width="100%" />
+Record camera streams on the EasyPi storage, browse saved clips by camera and time, download recordings, and remove recordings that are no longer needed. Retention controls help limit how long recordings remain on disk so camera storage does not grow without bound.
 
-</details>
+<img src="assets/screenshots/camera-recordings.webp" alt="EasyPi camera recordings" width="100%" />
 
 ## Reliable operations
 
@@ -236,4 +239,5 @@ EasyPi is distributed under a proprietary license for personal, non-commercial h
 <p align="center">
   Built by <strong>NextQuantum</strong> for Raspberry Pi owners who want one clear place to manage their system and network.
 </p>
+
 
