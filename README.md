@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>A secure, self-hosted control plane for Raspberry Pi.</strong><br />
-  Network protection, private connectivity, storage, cameras, automation, and local AI in one web interface.
+  Network-wide DNS blocking, private connectivity, storage, cameras, automation, and local AI in one web interface.
 </p>
 
 <p align="center">
@@ -18,7 +18,9 @@
 
 ## Overview
 
-EasyPi turns a Raspberry Pi into a practical home-server and network-management platform. Its browser interface brings system monitoring, VPN access, DNS protection, gateway controls, encrypted storage, IP cameras, backups, rollback, notifications, and local AI assistance into one place.
+EasyPi turns a Raspberry Pi into a practical home-server and network-management platform. Its browser interface brings system monitoring, VPN access, network-wide DNS blocking, gateway controls, encrypted storage, IP cameras, backups, rollback, notifications, and local AI assistance into one place.
+
+Its local NetProtection engine can block advertising, tracking, malware, adult-content, and administrator-selected domains for the whole network or for individual devices. This local DNS blocker is separate from **Personal DNS**, which deploys an encrypted DNS service to a user-controlled VPS for use away from home.
 
 The project is designed around a visible trust boundary: features that inspect or control network traffic work only when the relevant DNS queries or packets actually pass through EasyPi.
 
@@ -30,14 +32,20 @@ The project is designed around a visible trust boundary: features that inspect o
 
 | Area | Capabilities |
 |---|---|
-| **Guard Security** | NetProtection policies, PRISM traffic classification, Shadow Mode, heuristics, parental controls, schedules, per-device rules, and DNS activity |
+| **Guard Security** | Network-wide DNS blocking, NetProtection policies, PRISM traffic classification, Shadow Mode, heuristics, parental controls, schedules, per-device rules, and DNS activity |
 | **Private connectivity** | WireGuard VPN, Tailscale remote access, Personal DNS, outbound Internet Encryption, and Chameleon Stealth |
 | **Operations** | Live monitoring, network tools, jobs, notifications, encrypted backups, signed updates, and rollback snapshots |
 | **Private services** | PiCloud, browser file management, encrypted files, IP cameras, recording, terminal access, and local Ollama chat |
 
-## Guard Security and PRISM
+## Guard Security, DNS blocking, and PRISM
 
 Guard Security combines DNS policy with network observations. PRISM classifies traffic patterns, while Shadow Mode can observe proposed decisions before enforcement. The heuristics engine and new-domain analysis help identify unusual behavior, and administrators can apply parental-control rules and schedules to selected devices.
+
+### Network-wide DNS blocker
+
+NetProtection acts as EasyPi's local DNS blocker. It can stop requests for known advertising, tracking, malware, adult-content, and custom administrator-selected domains before protected devices connect to them. Policies can cover the whole network or selected devices and can include schedules, SafeSearch, custom allow/block lists, service controls, and DNS activity history.
+
+DNS filtering applies only when a device actually sends its DNS queries through EasyPi. Full Gateway Mode adds routing and bypass controls for traffic that traverses the Pi, while the dashboard reports whether managed devices have recently used EasyPi for DNS. Encrypted, cached, first-party, or out-of-path traffic may still evade DNS classification, so the interface does not present DNS blocking as complete traffic inspection.
 
 > Detection and filtering are best effort. Encrypted, novel, spoofed, or out-of-path traffic can evade classification. Device identity based on observed MAC and IP information is useful for administration but is not cryptographic authentication.
 
